@@ -28,7 +28,7 @@ Create Managed Zone, A/AAAA/CNAME/SOA/TXT/NS/MX records on AWS Route53.
 //
 
 module "A" {
-  source                    = "guessi/route53/aws"
+  source                    = "route53/aws"
   type                      = "A"
   zone_id                   = aws_route53_zone.default.zone_id
   records                   = var.a_records
