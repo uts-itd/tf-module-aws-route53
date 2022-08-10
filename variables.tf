@@ -115,6 +115,6 @@ variable "caa_records" {
     RECORD = string,
     TTL    = number,
   }))
-  description = "NS Records for Zone for Sub-domains"
+  description = "CAA Records for Zone"
   default     = []
 }
