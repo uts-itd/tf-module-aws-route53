@@ -107,3 +107,14 @@ variable "records_with_geolocation" {
   description = "Records with Geolocation"
   default     = []
 }
+
+
+variable "caa_records" {
+  type = list(object({
+    NAME   = string,
+    RECORD = string,
+    TTL    = number,
+  }))
+  description = "NS Records for Zone for Sub-domains"
+  default     = []
+}

@@ -155,3 +155,19 @@ resource "aws_route53_record" "Geolocation" {
     split(",", var.records_with_geolocation[count.index]["RECORD"]),
   )
 }
+
+//
+// Skeleton for CAA Resources
+//
+
+resource "aws_route53_record" "CAA" {
+  count = length(var.caa_records)
+
+  zone_id = var.zone_id
+
+  type = "CAA"
+  name = var.caa_records[count.index]["NAME"]
+  ttl  = var.caa_records[count.index]["TTL"]
+
+  records = compact(split(",", var.caa_records[count.index]["RECORD"]))
+}
